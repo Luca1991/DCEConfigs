@@ -1,0 +1,15 @@
+# DCEConfig file
+# Title: Hexen II
+# MD5 (h2.exe): F95156F7A55935FA4A79F9877FB010A3
+
+loader:
+  target: "h2.exe" 
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "C:\\"
+    return: 5 # DRIVE_CDROM
+  - api: "GetVolumeInformationA"
+    arg1: "C:\\"
+    arg2: "Hexen_II"
+    return: true
