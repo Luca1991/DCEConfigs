@@ -9,6 +9,7 @@ Here you can share your working DCEConfig files, or download existing ones.
 ## How to send your DCEConfig file
 
 Please open a PR containing only one DCEConfig file at a time. Your config must be working and clear and must containg precise informations about the target game/software like the MD5 hash of the main executable, the DCEAPIHook version and optionally the EAN/IAN barcode.
+For the title name, please use the same ones present in (PCGamingWiki)[PCGamingWiki](https://www.pcgamingwiki.com/)
 
 Here is an example of a good DCEConfig.yaml file that is welcome:
 
