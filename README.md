@@ -6,6 +6,8 @@ Here you can share your working DCEConfig files, or download existing ones.
 
 **PLEASE NOTE**: We have a zero tolerance policy against copyrighted files. DO NOT send any PR containing copyrighted binaries. Only DCEConfig files (text) are accepted.
 
+**PLEASE NOTE**: These DCEConfig files are provides *as is and without any warranty* by the DCE users community.
+
 ## How to send your DCEConfig file
 
 Please open a PR containing only one DCEConfig file at a time. Your config must be working and clear and must containg precise informations about the target game/software like the MD5 hash of the main executable, the DCEAPIHook version and optionally the EAN/IAN barcode.
