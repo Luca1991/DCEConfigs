@@ -1,0 +1,96 @@
+# DCEConfig file
+# Title: Tarzan (1999)
+# MD5 (tarzan.exe): 4F8D5F06E84577F833A8B1117333171E
+# DCEAPIHook version: v0.1.1
+# Note: copy "DATA" directory from CD to the install dir
+
+loader:
+  target: "tarzan.exe" 
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:\\"
+    return: 5 # DRIVE_CDROM
+  - api: "mciSendCommand"
+    arg2: 0x803 #MCI_OPEN
+    return: 0
+  - api: "mciSendCommand"
+    arg2: 0x814 #MCI_STATUS
+    status_return: 1 # SUCCESS
+    return: 0
+
+file_redirections:
+  - source: "L:\\DATA\\BLANK.ECM"
+    destination: ".\\DATA\\BLANK.ECM"
+  - source: "L:\\DATA\\CLIP01.ECM"
+    destination: ".\\DATA\\CLIP01.ECM"
+  - source: "L:\\DATA\\CLIP02.ECM"
+    destination: ".\\DATA\\CLIP02.ECM"
+  - source: "L:\\DATA\\CLIP03.ECM"
+    destination: ".\\DATA\\CLIP03.ECM"
+  - source: "L:\\DATA\\CLIP04.ECM"
+    destination: ".\\DATA\\CLIP04.ECM"
+  - source: "L:\\DATA\\CLIP05.ECM"
+    destination: ".\\DATA\\CLIP05.ECM"
+  - source: "L:\\DATA\\CLIP06A.ECM"
+    destination: ".\\DATA\\CLIP06A.ECM"
+  - source: "L:\\DATA\\CLIP06B.ECM"
+    destination: ".\\DATA\\CLIP06B.ECM"
+  - source: "L:\\DATA\\CLIP07.ECM"
+    destination: ".\\DATA\\CLIP07.ECM"
+  - source: "L:\\DATA\\CLIP08.ECM"
+    destination: ".\\DATA\\CLIP08.ECM"
+  - source: "L:\\DATA\\CLIP09.ECM"
+    destination: ".\\DATA\\CLIP09.ECM"
+  - source: "L:\\DATA\\CLIP10.ECM"
+    destination: ".\\DATA\\CLIP10.ECM"
+  - source: "L:\\DATA\\CLIP11.ECM"
+    destination: ".\\DATA\\CLIP11.ECM"
+  - source: "L:\\DATA\\CLIP12.ECM"
+    destination: ".\\DATA\\CLIP12.ECM"
+  - source: "L:\\DATA\\CLIP13.ECM"
+    destination: ".\\DATA\\CLIP13.ECM"
+  - source: "L:\\DATA\\CLIP13C.ECM"
+    destination: ".\\DATA\\CLIP13C.ECM"
+  - source: "L:\\DATA\\CLIP13D.ECM"
+    destination: ".\\DATA\\CLIP13D.ECM"
+  - source: "L:\\DATA\\CLIP13E1.ECM"
+    destination: ".\\DATA\\CLIP13E1.ECM"
+  - source: "L:\\DATA\\CLIPINTO.ECM"
+    destination: ".\\DATA\\CLIPINTO.ECM"
+  - source: "L:\\DATA\\DISNEY.ECM"
+    destination: ".\\DATA\\DISNEY.ECM"
+  - source: "L:\\DATA\\EUROCOM.ECM"
+    destination: ".\\DATA\\EUROCOM.ECM"
+  - source: "L:\\DATA\\GO_JAN03.ECM"
+    destination: ".\\DATA\\GO_JAN03.ECM"
+  - source: "L:\\DATA\\GO_JAN04.ECM"
+    destination: ".\\DATA\\GO_JAN04.ECM"
+  - source: "L:\\DATA\\GO_TKY03.ECM"
+    destination: ".\\DATA\\GO_TKY03.ECM"
+  - source: "L:\\DATA\\GO_TZA02.ECM"
+    destination: ".\\DATA\\GO_TZA02.ECM"
+  - source: "L:\\DATA\\GO_TZA03.ECM"
+    destination: ".\\DATA\\GO_TZA03.ECM"
+  - source: "L:\\DATA\\GO_TZA06.ECM"
+    destination: ".\\DATA\\GO_TZA06.ECM"
+  - source: "L:\\DATA\\GO_TZA07.ECM"
+    destination: ".\\DATA\\GO_TZA07.ECM"
+  - source: "L:\\DATA\\GO_TZA09.ECM"
+    destination: ".\\DATA\\GO_TZA09.ECM"
+  - source: "L:\\DATA\\GO_TZA10.ECM"
+    destination: ".\\DATA\\GO_TZA10.ECM"
+  - source: "L:\\DATA\\GO_TZA11.ECM"
+    destination: ".\\DATA\\GO_TZA11.ECM"
+  - source: "L:\\DATA\\GO_TZY02.ECM"
+    destination: ".\\DATA\\GO_TZY02.ECM"
+  - source: "L:\\DATA\\GO_TZY03.ECM"
+    destination: ".\\DATA\\GO_TZY03.ECM"
+  - source: "L:\\DATA\\GO_TZY05.ECM"
+    destination: ".\\DATA\\GO_TZY05.ECM"
+  - source: "L:\\DATA\\GO_TZY08.ECM"
+    destination: ".\\DATA\\GO_TZY08.ECM"
+  - source: "L:\\DATA\\STRANGER.ECM"
+    destination: ".\\DATA\\STRANGER.ECM"
