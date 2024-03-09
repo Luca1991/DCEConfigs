@@ -8,7 +8,7 @@ Here you can share your working DCEConfig files, or download existing ones.
 
 ## How to send your DCEConfig file
 
-Please open a PR containing only one DCEConfig file at a time. Your config must be working and clear and must containg precise informations about the target game/software like the MD5 hash of the main executable and optionally the EAN/IAN barcode.
+Please open a PR containing only one DCEConfig file at a time. Your config must be working and clear and must containg precise informations about the target game/software like the MD5 hash of the main executable, the DCEAPIHook version and optionally the EAN/IAN barcode.
 
 Here is an example of a good DCEConfig.yaml file that is welcome:
 
@@ -17,6 +17,7 @@ Here is an example of a good DCEConfig.yaml file that is welcome:
 # Title: Incredible Game
 # EAN/IAN: 5901234123457
 # MD5 (IG.exe): 0123456789ABCDEF0123456789ABCDEF
+# DCEAPIHook version: v0.1.1
 # NOTE: Remember to copy \Stuff\DATA0.DAT
 # and \Stuff\DATA1.DAT from the
 # original game disc to the 
