@@ -1,0 +1,24 @@
+# DCEConfig file
+# Title: Donald Duck: Quack Attack
+# MD5 (Donald.exe): 78626E4AAE0078C628A5BBF75F39F042
+# DCEAPIHook version: v0.1.1
+# Note: copy "Data\World\levels\LEVELS0.DAT" file from CD to the game dir
+
+
+loader:
+  target: "Donald.exe" 
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:\\"
+    return: 5 # DRIVE_CDROM
+  - api: "GetVolumeInformationA"
+    arg1: "L:\\"
+    arg2: "DONALD"
+    return: true
+
+file_redirections:
+  - source: "L:\\Data\\World\\levels\\LEVELS0.DAT"
+    destination: ".\\Data\\World\\levels\\LEVELS0.DAT"
