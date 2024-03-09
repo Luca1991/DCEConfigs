@@ -1,6 +1,7 @@
 # DCEConfig file
 # Title: Crazy Taxi
 # MD5 (Crazy_Taxi_PC.exe): 630FCC1E5237733C729D7213B5C2687D
+# DCEAPIHook version: v0.1.1
 
 loader:
   target: "Crazy_Taxi_PC.exe" 
