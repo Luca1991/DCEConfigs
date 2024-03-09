@@ -1,0 +1,23 @@
+# DCE Configuration file
+# Title: One Must Fall: Battlegrounds (Russian version)
+# MD5 (OMFBG.exe): 17FB9440DF45599F5C40168004050D86
+# DCEAPIHook version: v0.1.1
+# NOTE: copy this file to Engine folder inside installation dir.
+# NOTE: this game is protected by engin32 drm.
+
+loader:
+  target: "OMFBG.exe" 
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:\\"
+    return: 5 # DRIVE_CDROM
+  - api: "GetVolumeInformationA"
+    arg1: "L:\\"
+    arg2: "OMFBG"
+    return: true
+  - api: "GetFileAttributesA"
+    arg1: "L:\\data1.hdr"
+    return: 1
