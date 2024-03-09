@@ -1,0 +1,34 @@
+# DCEConfig file
+# Title: BigRaceUSA
+# MD5 (BigRaceUSA.exe): 4F91710E0BA7AE638994C119A60EAE23
+# DCEAPIHook version: v0.1.1
+# Note: During game installation select "CUSTOM" and full install
+
+loader:
+  target: "BigRaceUSA.exe" 
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:"
+    return: 5 # DRIVE_CDROM
+  - api: "GetVolumeInformationA"
+    arg1: "L:"
+    arg2: "BRUSA"
+    arg4: 0xCFF8F9D1
+    return: true
+  - api: "GetDiskFreeSpaceA"
+    arg1: "L:"
+    arg2: 0x1
+    arg3: 0x800
+    arg4: 0x0
+    arg5: 0x53476
+    return: true
+  - api: "mciSendCommand"
+    arg2: 0x803 #MCI_OPEN
+    return: 0
+  - api: "mciSendCommand"
+    arg2: 0x814 #MCI_STATUS
+    status_return: 1 # SUCCESS
+    return: 0
