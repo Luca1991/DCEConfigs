@@ -46,3 +46,5 @@ file_redirections:
   - source: "L:\\Stuff\\DATA1.DAT"
     destination: ".\\Stuff\\DATA1.DAT"
 ```
+
+To avoid confusion with games/software released in multiple versions, please place the DCEConfig file in a directory whose title is the MD5 hash of the target executable.
