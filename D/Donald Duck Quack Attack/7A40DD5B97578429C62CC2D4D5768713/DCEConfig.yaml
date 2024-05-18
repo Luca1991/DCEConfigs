@@ -2,7 +2,7 @@
 # Title: Donald Duck: Quack Attack
 # EAN/IAN: 8023171000589
 # MD5 (Donald.exe): 7A40DD5B97578429C62CC2D4D5768713
-# DCEAPIHook version: v0.1.1
+# DCEAPIHook version: v0.4.0
 # Note: copy "Data\World\levels\LEVELS0.DAT" file from CD to the game dir
 
 
@@ -23,3 +23,7 @@ hooks:
 file_redirections:
   - source: "L:\\Data\\World\\levels\\LEVELS0.DAT"
     destination: ".\\Data\\World\\levels\\LEVELS0.DAT"
+
+patches:
+  - offset: 0x48205 # Windows 10/11 FIX
+    patch: [0x6E, 0x5F, 0x5C, 0x00, 0xFF, 0x15, 0xC0, 0x54, 0x5C, 0x00, 0x83, 0xC4, 0x04]
