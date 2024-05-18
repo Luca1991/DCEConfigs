@@ -2,7 +2,7 @@
 # Title: Crazy Taxi
 # EAN/IAN: 5017783555455
 # MD5 (Crazy_Taxi_PC.exe): 630FCC1E5237733C729D7213B5C2687D
-# DCEAPIHook version: v0.1.1
+# DCEAPIHook version: v0.5.0
 
 loader:
   target: "Crazy_Taxi_PC.exe" 
@@ -17,3 +17,12 @@ hooks:
     arg1: "L:\\"
     arg2: "Crazy Taxi"
     return: true
+
+cheats:
+  - vkey: 0x70 # F1 -- INCREASE TIME
+    rva: 0x64F22C
+    cheat: [0xFF, 0xAA]
+  - vkey: 0x71 # F2 - FREEZE TIMER
+    rva: 0x43F15
+    original_bytes: [0xFF, 0x0D, 0x2C, 0xF2, 0xA4, 0x00]
+    cheat: [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]
