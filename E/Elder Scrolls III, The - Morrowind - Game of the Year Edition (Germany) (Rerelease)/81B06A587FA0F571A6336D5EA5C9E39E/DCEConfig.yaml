@@ -1,0 +1,33 @@
+# DCEConfig file
+# Title: The Elder Scrolls III: Morrowind: Game of the Year Edition
+# EAN/IAN: 4 012160 162111
+# Redump ID: 82200
+# MD5 (Morrowind Launcher.exe): 81B06A587FA0F571A6336D5EA5C9E39E
+# MD5 (Morrowind.exe): 0BD00A8AB5B1E14E7573DA7AF04381EA
+# DCEAPIHook version: v0.5.0
+# NOTE: You have to copy the following files and directories from the game disc to the installation directory:
+# ".\AutoRunMorrowind.exe"
+# ".\Video\"
+
+
+loader:
+  target: "Morrowind Launcher.exe" # You can also target "Morrowind.exe" to launch the game directly.
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:\\"
+    return: 5 # DRIVE_CDROM
+  - api: "GetVolumeInformationA"
+    arg1: "L:\\"
+    arg2: "Morrowind"
+    return: true
+
+file_redirections:
+  - source: "L:\\AutoRunMorrowind.exe"
+    destination: ".\\AutoRunMorrowind.exe"
+
+directory_redirections:
+  - source: "L:\\Video\\"
+    destination: ".\\Video\\"
