@@ -1,0 +1,10 @@
+# DCEConfig file
+# Title: Original War (Czech version)
+# MD5 (Owar.exe): F3AE093C9A61CCB581DFBD1573A440C5
+# MD5 (OwarFull.DLL): 20797916903489311E5699ECC0242828
+# DCEAPIHook version: v0.6.0
+# NOTE: this game is protected by Roxxe drm.
+
+loader:
+  target: "OwarFull.DLL" 
+
