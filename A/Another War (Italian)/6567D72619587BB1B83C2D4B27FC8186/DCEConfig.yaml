@@ -1,0 +1,22 @@
+# DCEConfig file
+# Title: Another War (Italian version)
+# EAN/IAN: 8011642123974
+# MD5 (AnotherWar.exe): 6567D72619587BB1B83C2D4B27FC8186
+# DCEAPIHook version: v0.6.0
+
+loader:
+  target: "AnotherWar.exe" 
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:\\"
+    return: 5 # DRIVE_CDROM
+  - api: "GetVolumeInformationA"
+    arg1: "L:\\"
+    arg2: "AW_Data"
+    arg4: 0x34304625
+    arg5: 0x6E
+    arg6: 0x1080005
+    return: true
