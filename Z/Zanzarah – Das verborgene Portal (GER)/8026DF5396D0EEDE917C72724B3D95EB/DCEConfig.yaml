@@ -1,0 +1,35 @@
+# DCEConfig file
+# Title: Zanzarah – Das verborgene Portal (German version)
+# EAN/IAN: 4005209029926
+# MD5 (main.exe): 8026DF5396D0EEDE917C72724B3D95EB
+# DCEAPIHook version: v0.6.0
+# NOTE: Original disc is protected by phenoProtect
+
+loader:
+  target: "main.exe"
+  args: " -zanzarah"
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "l:\\"
+    return: 5 # DRIVE_CDROM
+  - api: "GetVolumeInformationA"
+    arg1: "l:\\"
+    arg2: "ZANZARAH"
+    arg4: 0x0
+    arg5: 0x0
+    arg6: 0x0
+    return: true
+  - api: "GetDiskFreeSpaceA"
+    arg1: "l:\\"
+    arg2: 0x0
+    arg3: 0x800
+    arg4: 0x0
+    arg5: 0x0
+    return: true
+
+file_redirections:
+  - source: "l:\\Autorun.exe"
+    destination: ".\\Zanzarah.exe"
