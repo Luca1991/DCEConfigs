@@ -1,0 +1,22 @@
+# DCEConfig file
+# Title: Kapsyljakt med Anki & Pytte
+# MD5 (Anki och Pytte.exe): A077DAE51DB55329108D66E1E76F971F
+# DCEAPIHook version: v0.6.0
+
+loader:
+    target: "Anki och Pytte.exe"
+    
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:\\"
+    return: 5
+  - api: "GetVolumeInformationA"
+    arg1: "L:\\"
+    arg2: "Anki och Pytte"
+    return: true
+
+directory_redirections:
+  - source: "L:\\"
+    destination: ".\\"
