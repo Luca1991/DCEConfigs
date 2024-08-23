@@ -1,0 +1,76 @@
+# DCEConfig file
+# Title: Die Rache der Sumpfhühner SE
+# MD5 (HT.exe): 05435580DEDC2D0C975DADC966048EC3
+# DCEAPIHook version: v0.6.0
+# Note: copy "CD_Data" directory and "system.sos" from CD to the install dir
+# Note2: Due to the CRAZY game loading logic, all these directory redirections are needed!
+
+loader:
+  target: "HT.exe"
+
+virtual_drives: ['L']
+
+hooks:
+  - api: "GetDriveTypeA"
+    arg1: "L:\\"
+    return: 5 # DRIVE_CDROM
+
+file_redirections:
+  - source: "L:\\system.sos"
+    destination: ".\\system.sos"
+
+directory_redirections:
+  - source: "L:\\CD_Data\\"
+    destination: ".\\CD_Data\\"
+  - source: "DATA\\CASTLE"
+    destination: ".\\CD_Data\\CASTLE"
+  - source: "DATA/CASTLE"
+    destination: ".\\CD_Data\\CASTLE"
+  - source: "DATA\\DESERT"
+    destination: ".\\CD_Data\\DESERT"
+  - source: "DATA/DESERT"
+    destination: ".\\CD_Data\\DESERT"
+  - source: "DATA\\FairyLand"
+    destination: ".\\CD_Data\\FairyLand"
+  - source: "DATA/FairyLand"
+    destination: ".\\CD_Data\\FairyLand"
+  - source: "DATA\\FlyingIslands"
+    destination: ".\\CD_Data\\FlyingIslands"
+  - source: "DATA/FlyingIslands"
+    destination: ".\\CD_Data\\FlyingIslands"
+  - source: "DATA\\Garden"
+    destination: ".\\CD_Data\\Garden"
+  - source: "DATA/Garden"
+    destination: ".\\CD_Data\\Garden"
+  - source: "DATA\\Hills"
+    destination: ".\\CD_Data\\Hills"
+  - source: "DATA/Hills"
+    destination: ".\\CD_Data\\Hills"
+  - source: "DATA\\Islands"
+    destination: ".\\CD_Data\\Islands"
+  - source: "DATA/Islands"
+    destination: ".\\CD_Data\\Islands"
+  - source: "DATA\\NorthPole"
+    destination: ".\\CD_Data\\NorthPole"
+  - source: "DATA/NorthPole"
+    destination: ".\\CD_Data\\NorthPole"
+  - source: "DATA\\PARK"
+    destination: ".\\CD_Data\\PARK"
+  - source: "DATA/PARK"
+    destination: ".\\CD_Data\\PARK"
+  - source: "DATA\\Revenge_Gold"
+    destination: ".\\CD_Data\\Revenge_Gold"
+  - source: "DATA/Revenge_Gold"
+    destination: ".\\CD_Data\\Revenge_Gold"
+  - source: "DATA\\Space"
+    destination: ".\\CD_Data\\Space"
+  - source: "DATA/Space"
+    destination: ".\\CD_Data\\Space"
+  - source: "DATA\\VILLAGE"
+    destination: ".\\CD_Data\\VILLAGE"
+  - source: "DATA/VILLAGE"
+    destination: ".\\CD_Data\\VILLAGE"
+  - source: "DATA/WATER"
+    destination: ".\\CD_Data\\WATER"
+  - source: "DATA\\WATER"
+    destination: ".\\CD_Data\\WATER"
